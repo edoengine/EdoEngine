@@ -1,0 +1,8 @@
+# Editor cache folders - Currently not needed
+.idea/
+.vs/
+.vscode/
+
+# Build folders
+bin/
+obj/
