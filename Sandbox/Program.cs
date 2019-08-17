@@ -2,11 +2,17 @@
 
 namespace Sandbox
 {
-    class Program
+    internal class Program : EdoApplication
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Class1.Print();
+            var client = new Program();
+            client.Initialize();
+            
+            // Testing Debug and text logger
+            Debug.Log("Test message");
+            var i = 2;
+            Debug.Log(i);
         }
     }
 }
