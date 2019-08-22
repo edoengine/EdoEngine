@@ -5,4 +5,8 @@
         <RootNamespace>Edo</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="glfw-net" Version="3.3.1" />
+    </ItemGroup>
+
 </Project>

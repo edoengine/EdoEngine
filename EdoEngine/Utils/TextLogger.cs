@@ -10,12 +10,15 @@ using System.Text;
 
 namespace Edo.Utils
 {
+    /// <summary>
+    /// Handles text logging to the console and files
+    /// </summary>
     internal class TextLogger
     {
         // Default Japanese encoding is UTF8 w/o BOM
-        private Encoding _encoding = new UTF8Encoding(false);
+        private readonly Encoding _encoding = new UTF8Encoding(false);
 
-        private string _filePath;
+        private readonly string _filePath;
         
         /// <summary>
         /// Constructs a new text logger
@@ -26,7 +29,6 @@ namespace Edo.Utils
         {
             _filePath = filePath;
             
-            // TODO: Flip or remove this if we don't need to do anything else on construction
             if (!rotate)
                 return;
 
