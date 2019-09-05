@@ -30,11 +30,13 @@ namespace Edo.Graphics
         internal EdoWindow(int width, int height, string title)
         {
             _nativeWindow = new NativeWindow(width, height, title);
+            Glfw.MakeContextCurrent(_nativeWindow);
         }
 
         ~EdoWindow()
         {
             _nativeWindow.Dispose();
+            Glfw.Terminate();
         }
 
         internal void OnUpdate()

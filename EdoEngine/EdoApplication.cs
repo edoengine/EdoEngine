@@ -5,6 +5,7 @@
 //=============================================================================
 
 using Edo.Graphics;
+using OpenGL;
 
 namespace Edo
 {
@@ -30,6 +31,7 @@ namespace Edo
             
             Debug.Initialize();
             
+            Gl.Initialize(); // This needs to be done before the glfw context is made current
             _window = new EdoWindow(1280, 720, application);
         }
 
@@ -46,6 +48,8 @@ namespace Edo
             // Main loop
             while (_running && !_window.Closing)
             {
+                Gl.ClearColor(0.6901961f, 0.1921569f, 0.2470588f, 1);
+                Gl.Clear(ClearBufferMask.ColorBufferBit);
                 _window.OnUpdate();
             }
         }
