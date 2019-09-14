@@ -15,10 +15,6 @@ namespace Edo.Graphics
     {
         private NativeWindow _nativeWindow;
 
-        internal int Width => _nativeWindow.Size.Width;
-
-        internal int Height => _nativeWindow.Size.Height;
-
         internal bool Closing => _nativeWindow.IsClosing;
 
         /// <summary>
@@ -31,6 +27,10 @@ namespace Edo.Graphics
         {
             _nativeWindow = new NativeWindow(width, height, title);
             Glfw.MakeContextCurrent(_nativeWindow);
+            
+            // Load icon
+            // TODO: This should come from the vfs
+            _nativeWindow.SetIcons(new ApplicationIcon("./application.png").ToImage());
         }
 
         ~EdoWindow()
