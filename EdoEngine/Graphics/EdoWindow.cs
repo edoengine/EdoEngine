@@ -4,6 +4,7 @@
 // Created by Victor on 2019/08/22
 //=============================================================================
 
+using System.ComponentModel;
 using GLFW;
 
 namespace Edo.Graphics
@@ -14,8 +15,9 @@ namespace Edo.Graphics
     internal class EdoWindow
     {
         private NativeWindow _nativeWindow;
+        private bool _closeCalled; // Safety check for GLFW window closing
 
-        internal bool Closing => _nativeWindow.IsClosing;
+        internal bool Closing => _nativeWindow.IsClosing || _closeCalled;
 
         /// <summary>
         /// Constructs a new window
@@ -31,6 +33,9 @@ namespace Edo.Graphics
             // Load icon
             // TODO: This should come from the vfs
             _nativeWindow.SetIcons(new ApplicationIcon("./application.png").ToImage());
+            
+            // Apply callbacks
+            _nativeWindow.Closing += OnClosing;
         }
 
         ~EdoWindow()
@@ -39,10 +44,20 @@ namespace Edo.Graphics
             Glfw.Terminate();
         }
 
-        internal void OnUpdate()
+        internal bool HandleEvents()
         {
             Glfw.PollEvents();
+            return !Closing; // TODO: Should this return for errors as well?
+        }
+
+        internal void Swap()
+        {
             _nativeWindow.SwapBuffers();
+        }
+
+        private void OnClosing(object sender, CancelEventArgs e)
+        {
+            _closeCalled = true;
         }
     }
 }

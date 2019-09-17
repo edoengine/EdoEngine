@@ -18,7 +18,7 @@ namespace Edo.Graphics
     {
         internal int Width { get; }
         internal int Height { get; }
-        internal byte[] Pixels { get; private set; }
+        internal byte[] Pixels { get; }
 
         /// <summary>
         /// Creates a new bitmap based icon
@@ -44,6 +44,10 @@ namespace Edo.Graphics
             bmp.Dispose();
         }
 
+        /// <summary>
+        /// Converts this image to a GLFW compatible image
+        /// </summary>
+        /// <returns>GLFW image</returns>
         public GLFW.Image ToImage()
         {
             var size = Width * Height * 4;
@@ -61,15 +65,10 @@ namespace Edo.Graphics
             // TODO: Is this performant enough? (do we care?)
             for (var i = 0; i < Pixels.Length; i += 4)
             {
+                // Swap red and blue channels
                 var r = Pixels[i];
-                var g = Pixels[i + 1];
-                var b = Pixels[i + 2];
-                var a = Pixels[i + 3];
-
-                Pixels[i] = b;
-                Pixels[i + 1] = g;
+                Pixels[i] = Pixels[i + 2];
                 Pixels[i + 2] = r;
-                Pixels[i + 3] = a;
             }
         }
     }

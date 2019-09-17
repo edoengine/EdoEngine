@@ -19,7 +19,7 @@ namespace Edo.Utils
         private readonly Encoding _encoding = new UTF8Encoding(false);
 
         private readonly string _filePath;
-        
+
         /// <summary>
         /// Constructs a new text logger
         /// </summary>
@@ -28,7 +28,7 @@ namespace Edo.Utils
         internal TextLogger(string filePath, bool rotate = false)
         {
             _filePath = filePath;
-            
+
             if (!rotate)
                 return;
 
