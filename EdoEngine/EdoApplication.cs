@@ -14,18 +14,17 @@ namespace Edo
     /// </summary>
     public abstract class EdoApplication
     {
-        private EdoWindow _window;
+        private IWindow _window;
 
         protected void Initialize(string company, string application)
         {
             Application.Name = application;
             Application.Company = company;
-            
-            Debug.Initialize();
-            
+
             // TODO: Move this to an OpenGL/Graphics handler
             OpenGL.Gl.Initialize(); // This needs to be done before the glfw context is made current
-            _window = new EdoWindow(1280, 720, application);
+            _window = new GlfwWindow();
+            _window.Initialize(application, 1280, 720);
         }
 
         protected void Run()

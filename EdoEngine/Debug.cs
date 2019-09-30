@@ -13,7 +13,7 @@ namespace Edo
     {
         private static TextLogger _logger;
         
-        internal static void Initialize()
+        static Debug()
         {
             // TODO: Proper file path
             var path = Path.Combine(Application.PersistentDataPath, "log.txt");

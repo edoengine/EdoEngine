@@ -12,12 +12,12 @@ namespace Edo.Graphics
     /// <summary>
     /// Handles windows abstraction
     /// </summary>
-    internal class EdoWindow
+    internal class GlfwWindow : IWindow
     {
         private NativeWindow _nativeWindow;
         private bool _closeCalled; // Safety check for GLFW window closing
 
-        internal bool Closing => _nativeWindow.IsClosing || _closeCalled;
+        public bool Closing => _nativeWindow.IsClosing || _closeCalled;
 
         /// <summary>
         /// Constructs a new window
@@ -25,7 +25,7 @@ namespace Edo.Graphics
         /// <param name="width">Window width</param>
         /// <param name="height">Window height</param>
         /// <param name="title">Window title</param>
-        internal EdoWindow(int width, int height, string title)
+        public void Initialize(string title, int width, int height)
         {
             _nativeWindow = new NativeWindow(width, height, title);
             Glfw.MakeContextCurrent(_nativeWindow);
@@ -38,19 +38,19 @@ namespace Edo.Graphics
             _nativeWindow.Closing += OnClosing;
         }
 
-        ~EdoWindow()
+        ~GlfwWindow()
         {
             _nativeWindow.Dispose();
             Glfw.Terminate();
         }
 
-        internal bool HandleEvents()
+        public bool HandleEvents()
         {
             Glfw.PollEvents();
             return !Closing; // TODO: Should this return for errors as well?
         }
 
-        internal void Swap()
+        public void Swap()
         {
             _nativeWindow.SwapBuffers();
         }
