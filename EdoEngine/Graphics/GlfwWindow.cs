@@ -5,6 +5,7 @@
 //=============================================================================
 
 using System.ComponentModel;
+using Edo.Vfs;
 using GLFW;
 
 namespace Edo.Graphics
@@ -32,7 +33,9 @@ namespace Edo.Graphics
             
             // Load icon
             // TODO: This should come from the vfs
-            _nativeWindow.SetIcons(new ApplicationIcon("./application.png").ToImage());
+            //_nativeWindow.SetIcons(new ApplicationIcon("./application.png").ToImage());
+            var icon = FileSystemManager.Load<ApplicationIcon>("windowicon");
+            _nativeWindow.SetIcons(icon.ToImage());
             
             // Apply callbacks
             _nativeWindow.Closing += OnClosing;

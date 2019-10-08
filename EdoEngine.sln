@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdoEngine", "EdoEngine\EdoE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{66701D84-B08B-4FE6-AD57-5D002D7625D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VfsTest", "VfsTest\VfsTest.csproj", "{CA69C1DF-58DA-4F19-BF27-2B81AC259BEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{66701D84-B08B-4FE6-AD57-5D002D7625D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66701D84-B08B-4FE6-AD57-5D002D7625D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66701D84-B08B-4FE6-AD57-5D002D7625D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA69C1DF-58DA-4F19-BF27-2B81AC259BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA69C1DF-58DA-4F19-BF27-2B81AC259BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA69C1DF-58DA-4F19-BF27-2B81AC259BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA69C1DF-58DA-4F19-BF27-2B81AC259BEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

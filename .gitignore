@@ -9,3 +9,7 @@ obj/
 
 # Generated files
 *.user
+
+# VFS stuff
+VfsTest/application.png
+VfsTest/windowicon

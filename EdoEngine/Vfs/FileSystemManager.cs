@@ -1,36 +1,16 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Edo.Vfs
 {
-    public class FileSystemManager
+    public static class FileSystemManager
     {
-        private static List<string> _paths = new List<string>();
+        private static readonly string DataPath = Path.Combine(Directory.GetCurrentDirectory(), "GameData");
 
-        // Add a path to possible file places. parameter path: A full path to search e.g. C:\MyGame\Data
-        public static void AddPath(string path)
+        public static T Load<T>(string fileId)
         {
-            var absolutePath = Path.GetFullPath(path);
-            if (!Directory.Exists(absolutePath) || _paths.Contains(absolutePath))
-                return;
-            
-            _paths.Add(absolutePath);
-        }
-        
-        // for testing
-        public static string GetFirstPath() => _paths[0];
-
-        // Searches for a file, and returns it's path
-        public static string FindFile(string id)
-        {
-            foreach (var path in _paths)
-            {
-                var current = Path.Combine(path, id);
-                if (File.Exists(current))
-                    return current;
-            }
-
-            return null;
+            using var fs = File.OpenRead(Path.Combine(DataPath, fileId));
+            return (T) new BinaryFormatter().Deserialize(fs);
         }
     }
 }
