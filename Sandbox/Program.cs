@@ -9,12 +9,12 @@ namespace Sandbox
         {
             var client = new Program();
             client.Initialize("vic485", "Sandbox");
-            TestJson();
-            TestBinary();
+            //TestJson();
+            //TestBinary();
             client.Run();
         }
 
-        private static void TestJson()
+        /*private static void TestJson()
         {
             var vec = new Vector2(2, 4);
             Debug.Log(vec.GetHashCode());
@@ -33,6 +33,6 @@ namespace Sandbox
             var filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "vector.dat");
             using var fs = System.IO.File.Create(filePath);
             new BinaryFormatter().Serialize(fs, vec);
-        }
+        }*/
     }
 }
