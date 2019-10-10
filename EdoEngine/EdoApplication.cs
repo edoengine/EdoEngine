@@ -5,6 +5,7 @@
 //=============================================================================
 
 using Edo.Graphics;
+using OpenGL;
 
 namespace Edo
 {
@@ -22,7 +23,7 @@ namespace Edo
             Application.Company = company;
 
             // TODO: Move this to an OpenGL/Graphics handler
-            OpenGL.Gl.Initialize(); // This needs to be done before the glfw context is made current
+            Gl.Initialize(); // This needs to be done before the glfw context is made current
             _window = new GlfwWindow();
             _window.Initialize(application, 1280, 720);
         }
@@ -35,7 +36,26 @@ namespace Edo
                 if (!_window.HandleEvents())
                     break;
                 
+                Gl.Viewport(0, 0, 1280, 720);
+                Gl.Clear(ClearBufferMask.ColorBufferBit);
+                Gl.ClearColor(0.6901961f, 0.1921569f, 0.2470588f, 1);
+                
                 // renderer drawing, (fixed)update?
+                Gl.MatrixMode(MatrixMode.Projection);
+                Gl.LoadIdentity();
+                Gl.Ortho(0.0, 1.0f, 0.0, 1.0, 0.0, 1.0);
+                Gl.MatrixMode(MatrixMode.Modelview);
+                Gl.LoadIdentity();
+                
+                Gl.Begin(PrimitiveType.Triangles);
+                Gl.Color3(1f, 0f, 0f);
+                Gl.Vertex2(0f, 0f);
+                Gl.Color3(0f, 1f, 0f);
+                Gl.Vertex2(0.5f, 1f);
+                Gl.Color3(0f, 0f, 1f);
+                Gl.Vertex2(1f, 0f);
+                Gl.End();
+                
                 _window.Swap();
             }
         }
