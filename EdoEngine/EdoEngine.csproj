@@ -3,6 +3,8 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
         <RootNamespace>Edo</RootNamespace>
+        <DefineConstants Condition="'$(OS)'=='Windows_NT'">$(DefineConstants);EDO_WINDOWS</DefineConstants>
+        <DefineConstants Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))'">$(DefineConstants);EDO_LINUX</DefineConstants>
     </PropertyGroup>
 
     <ItemGroup>
