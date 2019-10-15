@@ -44,20 +44,20 @@ namespace Edo
                 Gl.ClearColor(0.6901961f, 0.1921569f, 0.2470588f, 1);
                 
                 // renderer drawing, (fixed)update?
-                /*Gl.MatrixMode(MatrixMode.Projection);
+                Gl.MatrixMode(Gl.Projection);
                 Gl.LoadIdentity();
                 Gl.Ortho(0.0, 1.0f, 0.0, 1.0, 0.0, 1.0);
                 //Gl.MatrixMode(MatrixMode.Modelview);
                 //Gl.LoadIdentity();
                 
-                Gl.Begin(PrimitiveType.Triangles);
+                Gl.Begin(Gl.Triangles);
                 Gl.Color3(1f, 0f, 0f);
                 Gl.Vertex2(0f, 0f);
                 Gl.Color3(0f, 1f, 0f);
                 Gl.Vertex2(0.5f, 1f);
                 Gl.Color3(0f, 0f, 1f);
                 Gl.Vertex2(1f, 0f);
-                Gl.End();*/
+                Gl.End();
                 
                 _window.Swap();
             }

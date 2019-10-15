@@ -18,7 +18,7 @@ namespace VfsTest
         private static void SetupWindowIcon()
         {
             // load bitmap
-            var bmp = new Bitmap("./application.png");
+            using var bmp = new Bitmap("./application.png");
             var width = bmp.Width;
             var height = bmp.Height;
 
@@ -31,9 +31,7 @@ namespace VfsTest
             var bytes = Math.Abs(bmpData.Stride) * height;
             var pixels = new byte[bytes];
             Marshal.Copy(ptr, pixels, 0, bytes);
-
-            bmp.Dispose();
-
+            
             // Adjust color channels
             for (var i = 0; i < pixels.Length; i += 4)
             {
