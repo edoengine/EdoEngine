@@ -36,5 +36,7 @@ namespace Edo.Mathematics
         /// <param name="value">Value to find square root of</param>
         /// <returns>Square root of the value</returns>
         public static float Sqrt(float value) => (float) Math.Sqrt(value);
+        
+        public static float Epsilon => 0.00001f;
     }
 }

@@ -10,6 +10,7 @@ namespace Sandbox
         {
             var client = new Program();
             client.Initialize("vic485", "Sandbox");
+            Debug.Log(EdoMath.Epsilon);
             //TestJson();
             //TestBinary();
             client.Run();
