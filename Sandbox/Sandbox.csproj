@@ -1,8 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
+        <Configurations>Debug;Release;WinDebug</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'WinDebug' ">
+        <ConfigurationGroup>Debug</ConfigurationGroup>
+        <DebugSymbols>true</DebugSymbols>
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+        <DefineConstants>TRACE;EDO_WINDOWS</DefineConstants>
     </PropertyGroup>
 
     <ItemGroup>

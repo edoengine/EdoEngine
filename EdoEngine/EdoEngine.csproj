@@ -2,13 +2,15 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
+        <Configurations>Debug;Release;WinDebug</Configurations>
+        <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\glfw-net\GLFW.NET\GLFW.NET.csproj" />
     </ItemGroup>
 
-    <ItemGroup Condition="'$(OS)'=='Windows_NT'">
+    <ItemGroup Condition="'$(Configuration)'=='WinDebug'">
       <None Update="glfw.dll">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>

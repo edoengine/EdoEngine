@@ -10,19 +10,26 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		WinDebug|Any CPU = WinDebug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{1152BA45-76ED-40F2-A72C-2B706267C731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1152BA45-76ED-40F2-A72C-2B706267C731}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1152BA45-76ED-40F2-A72C-2B706267C731}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1152BA45-76ED-40F2-A72C-2B706267C731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1152BA45-76ED-40F2-A72C-2B706267C731}.WinDebug|Any CPU.ActiveCfg = WinDebug|Any CPU
+		{1152BA45-76ED-40F2-A72C-2B706267C731}.WinDebug|Any CPU.Build.0 = WinDebug|Any CPU
 		{884207F4-70F3-4256-B793-A7525DCF4078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{884207F4-70F3-4256-B793-A7525DCF4078}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{884207F4-70F3-4256-B793-A7525DCF4078}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{884207F4-70F3-4256-B793-A7525DCF4078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{884207F4-70F3-4256-B793-A7525DCF4078}.WinDebug|Any CPU.ActiveCfg = WinDebug|Any CPU
+		{884207F4-70F3-4256-B793-A7525DCF4078}.WinDebug|Any CPU.Build.0 = WinDebug|Any CPU
 		{19D62203-F015-4C16-80D6-FCEF15E515BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19D62203-F015-4C16-80D6-FCEF15E515BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19D62203-F015-4C16-80D6-FCEF15E515BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19D62203-F015-4C16-80D6-FCEF15E515BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19D62203-F015-4C16-80D6-FCEF15E515BB}.WinDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D62203-F015-4C16-80D6-FCEF15E515BB}.WinDebug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
