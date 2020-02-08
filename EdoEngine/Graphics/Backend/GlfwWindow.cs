@@ -54,9 +54,13 @@ namespace EdoEngine.Graphics.Backend
             _window.Dispose();
         }
 
-        public void Update()
+        public void PollEvents()
         {
             Glfw.PollEvents();
+        }
+
+        public void Update()
+        {
             _window.SwapBuffers();
         }
     }

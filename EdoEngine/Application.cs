@@ -13,6 +13,9 @@ namespace EdoEngine
             while (_mainWindow.IsOpen)
             {
                 _mainWindow.Update();
+                
+                // Do this last to catch closing events before attempting next frame
+                _mainWindow.PollEvents();
             }
         }
     }

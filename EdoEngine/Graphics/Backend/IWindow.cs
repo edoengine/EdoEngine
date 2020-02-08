@@ -6,6 +6,11 @@ namespace EdoEngine.Graphics.Backend
     internal interface IWindow
     {
         bool IsOpen { get; }
+        
+        /// <summary>
+        /// Check for, and run, window and system events
+        /// </summary>
+        void PollEvents();
 
         void Update();
     }
