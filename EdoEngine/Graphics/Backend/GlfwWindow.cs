@@ -1,4 +1,3 @@
-using System.ComponentModel;
 using GLFW;
 
 namespace EdoEngine.Graphics.Backend
@@ -10,23 +9,18 @@ namespace EdoEngine.Graphics.Backend
     {
         public bool IsOpen => !_window.IsClosing;
 
-        private NativeWindow _window;
+        private readonly NativeWindow _window;
 
         internal GlfwWindow(int width, int height, string title)
         {
             // TODO: Hints
-            Glfw.WindowHint(Hint.ClientApi, ClientApi.OpenGL);
-            Glfw.WindowHint(Hint.ContextVersionMajor, 3);
-            Glfw.WindowHint(Hint.ContextVersionMinor, 3);
-            Glfw.WindowHint(Hint.OpenglProfile, Profile.Core);
-            Glfw.WindowHint(Hint.Doublebuffer, true);
-            Glfw.WindowHint(Hint.Decorated, true);
+            Glfw.WindowHint(Hint.ScaleToMonitor, true); // Auto-scales window on X11. Also increases framebuffer
 
             _window = new NativeWindow(width, height, title);
             _window.CenterOnScreen();
-            
+
             //_window.Closed
-            // TODO: Below event allows for cancelling closing from pressing the 'x' button. Will this block when called?
+            // TODO: Below event allows for cancelling closing from pressing the 'x' button. Will this block when called? - yes
             //_window.Closing
             //_window.Disposed
             //_window.Refreshed
