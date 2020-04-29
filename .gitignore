@@ -1,0 +1,6 @@
+﻿# Build directories
+bin/
+obj/
+
+# Editor cache
+.idea/
